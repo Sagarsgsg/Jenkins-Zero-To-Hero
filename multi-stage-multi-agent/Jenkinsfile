@@ -17,5 +17,11 @@ pipeline {
         sh 'node --version'
       }
     }
+    stage('Gituu') {
+      agent {
+        docker { image 'git' }
+      }
+      steps {
+        sh 'git --version'
   }
 }

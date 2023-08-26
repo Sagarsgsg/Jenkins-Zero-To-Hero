@@ -19,10 +19,10 @@ pipeline {
     }
     stage('Gituu') {
       agent {
-        docker { image 'git' }
+        docker { image 'nginxinc/nginx-unprivileged' }
       }
       steps {
-        sh 'git --version'
+        sh 'nginx --version'
       }
     } 
   }

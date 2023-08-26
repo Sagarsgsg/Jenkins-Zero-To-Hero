@@ -17,7 +17,7 @@ pipeline {
         sh 'node --version'
       }
     }
-    stage('Gituu') {
+    stage('Nginx') {
       agent {
         docker { image 'nginxinc/nginx-unprivileged' }
       }
@@ -25,5 +25,13 @@ pipeline {
         sh 'nginx -v'
       }
     } 
+    stage('Gittu') {
+      agent {
+        docker { image 'bitnami/git' }
+      }
+      steps {
+        sh 'git --version'
+      }
+    }
   }
 }

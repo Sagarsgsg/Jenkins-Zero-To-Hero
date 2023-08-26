@@ -22,7 +22,7 @@ pipeline {
         docker { image 'nginxinc/nginx-unprivileged' }
       }
       steps {
-        sh 'nginx --version'
+        sh 'nginx -v'
       }
     } 
   }
